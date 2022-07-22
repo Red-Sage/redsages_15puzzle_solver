@@ -1,0 +1,3 @@
+[submodule "RedSages_15Puzzle_Agent"]
+	path = RedSages_15Puzzle_Agent
+	url = https://github.com/Red-Sage/RedSages_15Puzzle_Agent.git
