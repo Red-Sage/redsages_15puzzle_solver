@@ -111,5 +111,71 @@ def remove_key_point(kp, des, upper_left, lower_right, out=False):
 
     return kp, des
 
+
+def draw_move(im, direction, x, y, len):
+    
+    color = (255, 0, 0)
+    thickness = 2
+    if direction == 0:
+        cv2.line(im, [x, y], [x, y-len[0]], color, thickness)
+        cv2.line(im,
+                 [x, y],
+                 [int(x+len[1]*.25), int(y-len[0]*.25)],
+                 color,
+                 thickness,
+                 )
+        cv2.line(im,
+                 [x, y],
+                 [int(x-len[1]*.25), int(y-len[0]*.25)],
+                 color,
+                 thickness,
+                 )
+      
+    elif direction == 1:
+        cv2.line(im, [x, y], [x+len[1], y], color, thickness)
+        cv2.line(im,
+                 [x, y],
+                 [int(x+len[1]*.25), int(y+len[0]*.25)],
+                 color,
+                 thickness,
+                 )
+        cv2.line(im,
+                 [x, y],
+                 [int(x+len[1]*.25), int(y-len[0]*.25)],
+                 color,
+                 thickness,
+                 )
+
+    elif direction == 2:
+        cv2.line(im, [x, y], [x, y+len[0]], color, thickness)
+        cv2.line(im,
+                 [x, y],
+                 [int(x+len[1]*.25), int(y+len[0]*.25)],
+                 color,
+                 thickness,
+                 )
+        cv2.line(im,
+                 [x, y],
+                 [int(x-len[1]*.25), int(y+len[0]*.25)],
+                 color,
+                 thickness,
+                 )
+
+    elif direction == 3:
+        cv2.line(im, [x, y], [x-len[1], y], color, thickness)
+        cv2.line(im,
+                 [x, y],
+                 [int(x-len[1]*.25), int(y+len[0]*.25)],
+                 color,
+                 thickness,
+                 )
+        cv2.line(im,
+                 [x, y],
+                 [int(x-len[1]*.25), int(y-len[0]*.25)],
+                 color,
+                 thickness,
+                 )
+
+
     
 

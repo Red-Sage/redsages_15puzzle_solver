@@ -8,3 +8,12 @@ def VideoCapture(*args, **kwargs):
         yield cap
     finally:
         cap.release()
+
+
+@contextmanager
+def VideoWrite(*args, **kwargs):
+    writer = cv2.VideoWriter(*args, **kwargs)
+    try:
+        yield writer
+    finally:
+        writer.release()
